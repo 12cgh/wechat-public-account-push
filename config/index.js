@@ -62,7 +62,7 @@ export const USER_CONFIG = {
       // 想要发送的人的名字
       name: "叶林华",
       // 扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: "Hidamari",
+      id: "wxid_nvn3woiqrfl222",
       // 你想对他发送的模板消息的模板ID
       useTemplateId: "EMfHivrtj0GEFWBBr-BO3aayPf5-_aHZK-8PMY0pz_s	",
       // 所在省份
@@ -96,7 +96,7 @@ export const USER_CONFIG = {
     },
     {
       name: "叶林华",
-      id: "Hidamari",
+      id: "wxid_nvn3woiqrfl222",
       useTemplateId: "EMfHivrtj0GEFWBBr-BO3aayPf5-_aHZK-8PMY0pz_s	",
       province: "",
       city: "",
