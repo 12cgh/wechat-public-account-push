@@ -62,7 +62,7 @@ export const USER_CONFIG = {
       // 想要发送的人的名字
       name: "叶林华",
       // 扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: "oT_1X65Zb5khakMeDY--NM9V1oVw	",
+      id: "Hidamari",
       // 你想对他发送的模板消息的模板ID
       useTemplateId: "EMfHivrtj0GEFWBBr-BO3aayPf5-_aHZK-8PMY0pz_s	",
       // 所在省份
@@ -96,32 +96,8 @@ export const USER_CONFIG = {
     },
     {
       name: "叶林华",
-      id: "1",
+      id: "Hidamari",
       useTemplateId: "EMfHivrtj0GEFWBBr-BO3aayPf5-_aHZK-8PMY0pz_s	",
-      province: "",
-      city: "",
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: "https://wangxinleo.cn",
-      festivals: [],
-      customizedDateList: []
-    },
-    {
-      name: "老婆2",
-      id: "",
-      useTemplateId: "",
-      province: "",
-      city: "",
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: "https://wangxinleo.cn",
-      festivals: [],
-      customizedDateList: []
-    },
-    {
-      name: "老婆3",
-      id: "",
-      useTemplateId: "",
       province: "",
       city: "",
       horoscopeDate: '',
