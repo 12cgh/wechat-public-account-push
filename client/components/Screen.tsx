@@ -102,6 +102,7 @@ const KeyboardAwareScrollable = ({
   const enhancedContentStyle = [{ ...merged, paddingBottom: currentPB + extraPadding }];
 
   // 基础配置 props，用于传递给 KeyboardAware 组件
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const commonProps = {
     ...childAttrs,
     contentContainerStyle: enhancedContentStyle,
@@ -115,7 +116,7 @@ const KeyboardAwareScrollable = ({
     ...(Platform.OS === 'ios'
       ? { contentInsetAdjustmentBehavior: childAttrs['contentInsetAdjustmentBehavior'] ?? contentInsetBehaviorIOS }
       : {}),
-  };
+  } as unknown as React.ComponentProps<typeof KeyboardAwareScrollView>;
 
   const t = (element as React.ReactElement).type;
 
@@ -126,11 +127,19 @@ const KeyboardAwareScrollable = ({
   }
 
   if (t === FlatList) {
-    return <KeyboardAwareFlatList {...commonProps} />;
+    return (
+      <KeyboardAwareFlatList
+        {...(commonProps as unknown as React.ComponentProps<typeof KeyboardAwareFlatList>)}
+      />
+    );
   }
 
   if (t === SectionList) {
-    return <KeyboardAwareSectionList {...commonProps} />;
+    return (
+      <KeyboardAwareSectionList
+        {...(commonProps as unknown as React.ComponentProps<typeof KeyboardAwareSectionList>)}
+      />
+    );
   }
 
   // 理论上不应运行到这里，如果是非标准组件则原样返回，仅修改样式

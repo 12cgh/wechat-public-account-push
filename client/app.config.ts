@@ -13,7 +13,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
@@ -49,22 +49,40 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       [
         "expo-image-picker",
         {
-          "photosPermission": `允许${appName}访问您的相册，以便您上传或保存图片。`,
-          "cameraPermission": `允许${appName}使用您的相机，以便您直接拍摄照片上传。`,
-          "microphonePermission": `允许${appName}访问您的麦克风，以便您拍摄带有声音的视频。`
+          "photosPermission": `允许蓝牙车钥匙App访问您的相册，以便您上传或保存图片。`,
+          "cameraPermission": `允许蓝牙车钥匙App使用您的相机，以便您直接拍摄照片上传。`,
+          "microphonePermission": `允许蓝牙车钥匙App访问您的麦克风，以便您拍摄带有声音的视频。`
         }
       ],
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": `${appName}需要访问您的位置以提供周边服务及导航功能。`
+          "locationWhenInUsePermission": `蓝牙车钥匙App需要通过蓝牙扫描车辆信标来感知距离（iOS 上蓝牙扫描需要定位权限），用于自动解锁/锁车。`,
+          "locationAlwaysAndWhenInUsePermission": `蓝牙车钥匙App需要在后台通过蓝牙持续感知车辆距离，用于靠近自动解锁、离开自动锁车。`,
+          "isIosBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": true,
+          "neverForLocation": true,
+          "modes": ["central"],
+          "bluetoothAlwaysPermission": `蓝牙车钥匙App需要使用蓝牙连接/扫描车辆信标（BLE Beacon）以感知距离并自动执行解锁/锁车。`
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#00F0FF"
         }
       ],
       [
         "expo-camera",
         {
-          "cameraPermission": `${appName}需要访问相机以拍摄照片和视频。`,
-          "microphonePermission": `${appName}需要访问麦克风以录制视频声音。`,
+          "cameraPermission": `蓝牙车钥匙App需要访问相机以拍摄照片和视频。`,
+          "microphonePermission": `蓝牙车钥匙App需要访问麦克风以录制视频声音。`,
           "recordAudioAndroid": true
         }
       ]
